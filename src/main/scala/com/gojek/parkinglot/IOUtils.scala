@@ -1,7 +1,8 @@
 package com.gojek.parkinglot
 
 class IOUtils {
-  def matchInput(input: String): Int = {
+  def matchInput(input: String)= {
+
     val inputLowerCase = input.toLowerCase()
     val splitedCommand = inputLowerCase.split(" ")
     val command = splitedCommand(0)
@@ -13,9 +14,9 @@ class IOUtils {
       case "slot_numbers_for_cars_with_colour" => slotForColor(splitedCommand(1))
       case "slot_number_for_registration_number" => slotForReg(splitedCommand(1))
       case "registration_numbers_for_cars_with_colour" => regForColor(splitedCommand(1))
+      case "exit" =>
       case _ => inputErrorHandler(input)
     }
-    4
   }
 
   def provideParkingSlot(totalSlot: Int): Unit = {
