@@ -2,15 +2,22 @@ package com.gojek.parkinglot
 
 class IOUtils {
   def matchInput(input: String)= {
-
+    var parkingLot = 0
     val inputLowerCase = input.toLowerCase()
     val splitedCommand = inputLowerCase.split(" ")
     val command = splitedCommand(0)
     command match {
-      case "create_parking_lot" => provideParkingSlot(splitedCommand(1).toInt)
-      case "park" => parkVehicle(splitedCommand(1),splitedCommand(2))
-      case "leave" => leave(splitedCommand(1).toInt)
-      case "status" => status()
+      case "create_parking_lot" => {
+        if(parkingLot == 0) {
+          ParkingSlotMaster.createParkingLot(splitedCommand(1).toInt)
+          parkingLot = parkingLot + 1
+        }
+        else
+          print("Parking lot already created\n")
+      }
+      case "park" => ParkingSlotMaster.vehicleParked(splitedCommand(1),splitedCommand(2))
+      case "leave" => ParkingSlotMaster.leave(splitedCommand(1).toInt)
+      case "status" => ParkingSlotMaster.status()
       case "slot_numbers_for_cars_with_colour" => slotForColor(splitedCommand(1))
       case "slot_number_for_registration_number" => slotForReg(splitedCommand(1))
       case "registration_numbers_for_cars_with_colour" => regForColor(splitedCommand(1))
@@ -19,21 +26,7 @@ class IOUtils {
     }
   }
 
-  def provideParkingSlot(totalSlot: Int): Unit = {
-    ParkingSlotMaster.totalSlot = totalSlot
-  }
 
-  def parkVehicle(registrationNumber: String, color: String): Unit = {
-
-  }
-
-  def leave(slotNum: Int): Unit = {
-
-  }
-
-  def status(): Unit = {
-
-  }
 
   def slotForColor(color: String): Unit = {
 
