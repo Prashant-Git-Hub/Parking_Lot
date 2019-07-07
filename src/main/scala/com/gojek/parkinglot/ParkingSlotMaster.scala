@@ -103,14 +103,17 @@ object ParkingSlotMaster {
     }
   }
 
+  // Find Slot numbers for particualr color
   def slotForColor(color: String): Unit = {
 
   }
 
+  // Find Slot number for particualr registration number
   def slotForReg(registrationNumber: String): Unit = {
 
   }
 
+  // Find registration number for particualr color
   def regForColor(color: String): Unit = {
 
   }
