@@ -3,9 +3,8 @@ package com.gojek.parkinglot
 class IOUtils {
   def matchInput(input: String)= {
     var parkingLot = 0
-    val inputLowerCase = input.toLowerCase()
-    val splitedCommand = inputLowerCase.split(" ")
-    val command = splitedCommand(0)
+    val splitedCommand = input.split(" ")
+    val command = splitedCommand(0).toLowerCase()
     command match {
       case "create_parking_lot" => {
         if(parkingLot == 0) {
