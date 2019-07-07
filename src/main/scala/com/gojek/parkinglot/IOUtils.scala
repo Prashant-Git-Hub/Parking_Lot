@@ -9,12 +9,18 @@ class IOUtils {
     val command = splitedCommand(0).toLowerCase()
     command match {
       case "create_parking_lot" => {
-        if(parkingLot == 0) {
-          ParkingSlotMaster.createParkingLot(splitedCommand(1).toInt)
-          parkingLot = parkingLot + 1
+        try {
+          if(parkingLot == 0) {
+            ParkingSlotMaster.createParkingLot(splitedCommand(1).toInt)
+            parkingLot = parkingLot + 1
+          }
+          else
+            print("Parking lot already created\n")
         }
-        else
-          print("Parking lot already created\n")
+        catch {
+          case ex: IllegalArgumentException =>
+            print("Plese provide Number of slots in integer\n")
+        }
       }
       case "park" => ParkingSlotMaster.vehicleParked(splitedCommand(1),splitedCommand(2))
       case "leave" => ParkingSlotMaster.leave(splitedCommand(1).toInt)
