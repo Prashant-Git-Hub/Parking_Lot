@@ -4,7 +4,7 @@ object ParkingSlotMaster {
 
   var totalSlot = 0
 
-  var takenVehicle : List[Array[String]] = List(Array("Slot No.", "Registration No", "Colour"))
+  var takenVehicle : List[Array[String]] = List(Array("Slot No.\t", "Registration No\t", "Colour\t"))
 
   var nearestFree: List[Int] = List(0)
 
@@ -12,16 +12,19 @@ object ParkingSlotMaster {
 
   var count = 0
 
+  // Create parking slots
   def createParkingLot(slotCount: Int): Unit = {
     totalSlot = slotCount
     print("Created a parking lot with " + totalSlot + " slots\n")
   }
 
+  // Provide parking lot number
   def availableSlot(): Int = {
     count = 0
     if(nearestFree.length == 1) {
       if(totalVehicle == totalSlot) {
         print("Sorry, parking lot is full\n")
+        count = 2
         0
       }
       else
@@ -36,28 +39,22 @@ object ParkingSlotMaster {
         catch {
           case ex: NullPointerException =>
             print("There is pointing to nothing\n")
-            0
+            3
         }
       }
   }
 
-  def vacentSlot(): Unit = {
-
-  }
-
+  // Storing parked vehicle details
   def vehicleParked(registrationNumber: String, color: String): Unit = {
     try {
-      takenVehicle = takenVehicle :+ Array(availableSlot().toString, registrationNumber, color)
-      for(x <- takenVehicle) {
-        for(y <- x) {
-          print(y + "\t")
+      var slotNum = availableSlot()
+      if(count != 2) {
+        takenVehicle = takenVehicle :+ Array(slotNum.toString, registrationNumber, color)
+        print("Allocated slot number: " + availableSlot() + "\n")
+        totalVehicle += 1
+        if(count == 1) {
+          nearestFree = nearestFree.take(1) ++ nearestFree.drop(2)
         }
-        print("\n")
-      }
-      print("Allocated slot number: " + availableSlot() + "\n")
-      totalVehicle += 1
-      if(count == 1) {
-        nearestFree.filter(x => x != nearestFree(1))
       }
     }
     catch {
@@ -70,6 +67,7 @@ object ParkingSlotMaster {
     }
   }
 
+  // Update records when any vehicle left the parking lot
   def leave(slotNum: Int): Unit = {
     try {
       if(nearestFree.contains(slotNum) || slotNum > totalVehicle)
@@ -95,6 +93,7 @@ object ParkingSlotMaster {
     }
   }
 
+  // Give the status of the current parking lot
   def status(): Unit = {
     for(x <- takenVehicle) {
       for(y <- x) {
@@ -102,6 +101,22 @@ object ParkingSlotMaster {
       }
       print("\n")
     }
+  }
+
+  def slotForColor(color: String): Unit = {
+
+  }
+
+  def slotForReg(registrationNumber: String): Unit = {
+
+  }
+
+  def regForColor(color: String): Unit = {
+
+  }
+
+  def inputErrorHandler(errorInput:String): Unit = {
+
   }
 
 }
