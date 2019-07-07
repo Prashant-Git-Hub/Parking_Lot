@@ -22,7 +22,7 @@ class IOUtils {
       case "slot_numbers_for_cars_with_colour" => ParkingSlotMaster.slotForColor(splitedCommand(1))
       case "slot_number_for_registration_number" => ParkingSlotMaster.slotForReg(splitedCommand(1))
       case "registration_numbers_for_cars_with_colour" => ParkingSlotMaster.regForColor(splitedCommand(1))
-      case "exit" =>
+      case "exit" => System.exit(1)
       case _ => ParkingSlotMaster.inputErrorHandler(input)
     }
   }

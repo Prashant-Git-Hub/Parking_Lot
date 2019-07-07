@@ -50,19 +50,14 @@ object ParkingSlotMaster {
     try {
       var slotNum = availableSlot()
       if(count != 2) {
-        for(x <- takenVehicle) {
-          if(x(1) == registrationNumber) {
-            print("This registration number is already present in the Parking, please check the registration number again")
+          takenVehicle = takenVehicle :+ Array(slotNum.toString, registrationNumber, color)
+          print("Allocated slot number: " + availableSlot() + "\n")
+          totalVehicle += 1
+          if(count == 1) {
+            nearestFree = nearestFree.take(1) ++ nearestFree.drop(2)
           }
         }
-        takenVehicle = takenVehicle :+ Array(slotNum.toString, registrationNumber, color)
-        print("Allocated slot number: " + availableSlot() + "\n")
-        totalVehicle += 1
-        if(count == 1) {
-          nearestFree = nearestFree.take(1) ++ nearestFree.drop(2)
-        }
       }
-    }
     catch {
       case ex: IndexOutOfBoundsException => {
         print("registration number or color is missing from data\n")
@@ -153,6 +148,6 @@ object ParkingSlotMaster {
 
   // It will take the wrong input data
   def inputErrorHandler(errorInput:String): Unit = {
-    print("Your input does not matches with our input format, please read the application manual")
+    print("Your input does not matches with our input format, please read the application manual\n")
   }
 }
