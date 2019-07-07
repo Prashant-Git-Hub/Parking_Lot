@@ -26,9 +26,4 @@ class IOUtils {
       case _ => ParkingSlotMaster.inputErrorHandler(input)
     }
   }
-
-
-
-
-
 }

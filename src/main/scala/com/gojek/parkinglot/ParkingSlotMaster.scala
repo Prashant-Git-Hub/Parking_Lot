@@ -1,4 +1,5 @@
 package com.gojek.parkinglot
+import util.control.Breaks._
 
 object ParkingSlotMaster {
 
@@ -49,6 +50,11 @@ object ParkingSlotMaster {
     try {
       var slotNum = availableSlot()
       if(count != 2) {
+        for(x <- takenVehicle) {
+          if(x(1) == registrationNumber) {
+            print("This registration number is already present in the Parking, please check the registration number again")
+          }
+        }
         takenVehicle = takenVehicle :+ Array(slotNum.toString, registrationNumber, color)
         print("Allocated slot number: " + availableSlot() + "\n")
         totalVehicle += 1
@@ -105,21 +111,48 @@ object ParkingSlotMaster {
 
   // Find Slot numbers for particualr color
   def slotForColor(color: String): Unit = {
-
+    var test = 0
+      for(x <- takenVehicle) {
+        if(x(2) == color) {
+          print(x(0) + ", ")
+          test += 1
+        }
+      }
+    if(test == 0)
+      print("Not found")
+    print("\n")
   }
+
 
   // Find Slot number for particualr registration number
   def slotForReg(registrationNumber: String): Unit = {
-
+    breakable{
+      for(x <- takenVehicle) {
+        if(x(1) == registrationNumber) {
+          print(x(0) + "\n")
+          break()
+        }
+      }
+    }
+    print("Not found\n")
   }
 
-  // Find registration number for particualr color
+  // Find registration numbers for particualr color
   def regForColor(color: String): Unit = {
-
+    var test = 0
+    for(x <- takenVehicle) {
+      if(x(2) == color) {
+        print(x(1) + ", ")
+        test += 1
+      }
+    }
+    if(test == 0)
+      print("Not found")
+    print("\n")
   }
 
+  // It will take the wrong input data
   def inputErrorHandler(errorInput:String): Unit = {
-
+    print("Your input does not matches with our input format, please read the application manual")
   }
-
 }
