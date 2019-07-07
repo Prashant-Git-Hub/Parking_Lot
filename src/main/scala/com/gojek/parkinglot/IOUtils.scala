@@ -1,15 +1,14 @@
 package com.gojek.parkinglot
 
+import scala.collection.SortedSet
+
 class IOUtils {
   var totalSlot = 0
-
-  var nearestFree: List[Int] = List(0)
-
+  var nearestFree: SortedSet[Int] = SortedSet()
   var freeCount = 0
-
   var totalVehicle = 0
-
   var takenVehicle : List[Array[String]] = List(Array("Slot No.\t", "Registration No\t", "Colour\t"))
+  //val reg = (/^[A-Z]{2}$/i).r
 
   // Matches the input with some pre-defined commands
   def matchInput(input: String)= {
@@ -36,8 +35,8 @@ class IOUtils {
         if(ParkingSlotMaster.vehicleParked(splitedCommand(1), splitedCommand(2), availableSlot, nearestFree, totalVehicle, totalSlot) == 1) {
           takenVehicle = takenVehicle :+ Array(availableSlot(nearestFree, totalVehicle, totalSlot).toString, splitedCommand(1),splitedCommand(2))
           totalVehicle += 1
-          if(freeCount == nearestFree.length - 1)
-            nearestFree = nearestFree.take(1) ++ nearestFree.drop(2)
+          if(freeCount == nearestFree.size - 1)
+            nearestFree = nearestFree - nearestFree.head
         }
         else{
           print("Sorry, parking lot is full\n")
@@ -46,7 +45,7 @@ class IOUtils {
       case "leave" => {
         val slotNum = ParkingSlotMaster.leave(splitedCommand(1).toInt, nearestFree, totalVehicle, totalSlot)
         if(slotNum > 0) {
-          nearestFree = nearestFree :+ slotNum
+          nearestFree = nearestFree + slotNum
           takenVehicle = takenVehicle.filter(x => !x.contains(slotNum.toString))
           print("Slot number " + slotNum + " is free\n")
           totalVehicle -= 1
@@ -62,8 +61,8 @@ class IOUtils {
   }
 
   // Provide parking lot number
-  def availableSlot(nearest: List[Int], totalV: Int, totalS: Int): Int = {
-    if(nearest.length == 1) {
+  def availableSlot(nearest: SortedSet[Int], totalV: Int, totalS: Int): Int = {
+    if(nearest.size == 0) {
       if(totalV == totalS) {
         0
       }
@@ -72,9 +71,8 @@ class IOUtils {
     }
     else {
       try{
-        nearest.sorted
-        freeCount = nearest.length - 1
-        nearest(1)
+        freeCount = nearest.size - 1
+        nearest.head
       }
       catch {
         case ex: NullPointerException =>

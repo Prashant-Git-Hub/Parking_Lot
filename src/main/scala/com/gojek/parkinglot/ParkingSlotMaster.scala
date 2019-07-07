@@ -1,10 +1,11 @@
 package com.gojek.parkinglot
+import scala.collection.SortedSet
 import util.control.Breaks._
 
 object ParkingSlotMaster {
 
   // Storing parked vehicle details
-  def vehicleParked(registrationNumber: String, color: String, availableSlot: (List[Int], Int, Int) => Int, nearestF: List[Int], totalV: Int, totalS: Int): Int = {
+  def vehicleParked(registrationNumber: String, color: String, availableSlot: (SortedSet[Int], Int, Int) => Int, nearestF: SortedSet[Int], totalV: Int, totalS: Int): Int = {
     try {
       val slotNum = availableSlot(nearestF, totalV, totalS)
       if(slotNum >= 1) {
@@ -27,24 +28,26 @@ object ParkingSlotMaster {
   }
 
   // Update records when any vehicle left the parking lot
-  def leave(slotNum: Int, nearestFree: List[Int], totalVehicle: Int, totalSlot: Int): Int = {
+  def leave(slotNum: Int, nearestFree: SortedSet[Int], totalVehicle: Int, totalSlot: Int): Int = {
     try {
-      if(nearestFree.contains(slotNum) || slotNum > totalVehicle) {
-        print("This Slot is already vacent\n")
+      if(nearestFree.contains(slotNum) && slotNum <= totalSlot) {
+        print("This Slot is already vacant\n")
         0
+      }
+      else {
+        if(slotNum > totalSlot) {
+          print("No such slot available\n")
+          0
+        }
+        else {
+          slotNum
+        }
       }
     }
     catch {
       case ex: NullPointerException =>
         print("This is pointing to nothing\n")
         0
-    }
-    if(slotNum > totalSlot) {
-      print("No such slot available\n")
-      0
-    }
-    else {
-     slotNum
     }
   }
 
@@ -82,8 +85,8 @@ object ParkingSlotMaster {
           break()
         }
       }
+      print("Not found\n")
     }
-    print("Not found\n")
   }
 
   // Find registration numbers for particular color
