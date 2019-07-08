@@ -1,0 +1,78 @@
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
+[0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	added: Set(C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] 	modified: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidated products: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] External API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Modified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] Initial directly invalidated sources: Set(C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] [0m
+[0m[[0mdebug[0m] [0m[naha] Sources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m[naha] 	product: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m[naha] 	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala)[0m
+[0m[[0mdebug[0m] [0m[naha] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\target\scala-2.10\classes...[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.10.6[0m
+[0m[[0minfo[0m] [0m'compiler-interface' not yet compiled for Scala 2.10.6. Compiling...[0m
+[0m[[0mdebug[0m] [0mPlain interface to Scala compiler 2.10.6  with arguments: [0m
+[0m[[0mdebug[0m] [0m	-nowarn[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_cb1a3419[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	C:\Program Files\Java\jdk1.8.0_71\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_71\jre\classes;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\org.scala-sbt\sbt\0.13.15\xsbti\interface-0.13.15.jar;C:\Users\PRC5COB\AppData\Local\Temp\sbt_4a0ca8a2\srcs\org.scala-sbt\compiler-interface\compiler-interface-0.13.15-sources.jar;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\scala-compiler.jar;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\scala-reflect.jar;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\jansi.jar;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\jline.jar[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\API.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Analyzer.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Command.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Compat.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\CompilerInterface.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\ConsoleInterface.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\DelegatingReporter.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Dependency.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\ExtractAPI.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\ExtractUsedNames.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\GlobalHelpers.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\LocateClassFile.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Log.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\Message.scala[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\AppData\Local\Temp\sbt_199ec568\xsbt\ScaladocInterface.scala[0m
+[0m[[0minfo[0m] [0m  Compilation completed in 16.624 s[0m
+[0m[[0mdebug[0m] [0mGetting org.scala-sbt:compiler-interface:0.13.15:component from component compiler for Scala 2.10.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 674a5740, interfacing (CompilerInterface) with Scala compiler version 2.10.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	C:\Program Files\Java\jdk1.8.0_71\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_71\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_71\jre\classes;C:\Users\PRC5COB\.sbt\boot\scala-2.10.6\lib\scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	C:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\target\scala-2.10\classes[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:3: object ParkingSlotMaster is not a member of package com.gojek.parkinglot[0m
+[0m[[31merror[0m] [0mimport com.gojek.parkinglot.ParkingSlotMaster._[0m
+[0m[[31merror[0m] [0m                            ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:4: object scalatest is not a member of package org[0m
+[0m[[31merror[0m] [0mimport org.scalatest._[0m
+[0m[[31merror[0m] [0m           ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:8: not found: type FunSpec[0m
+[0m[[31merror[0m] [0mclass ParkingSlotMasterTest extends FunSpec {[0m
+[0m[[31merror[0m] [0m                                    ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:11: not found: value describe[0m
+[0m[[31merror[0m] [0m  describe("ParkingSlotMaster.vehicleParked") {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:73: not found: value describe[0m
+[0m[[31merror[0m] [0m  describe("ParkingSlotMaster.leave") {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:95: not found: value describe[0m
+[0m[[31merror[0m] [0m  describe("ParkingSlotMaster.slotForColor") {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:113: not found: value describe[0m
+[0m[[31merror[0m] [0m  describe("ParkingSlotMaster.slotForReg") {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0mC:\Users\PRC5COB\IdeaProjects\ParkingLot\bin\ParkingSlotMasterTest.scala:131: not found: value describe[0m
+[0m[[31merror[0m] [0m  describe("ParkingSlotMaster.regForColor") {[0m
+[0m[[31merror[0m] [0m  ^[0m
+[0m[[31merror[0m] [0m8 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m
