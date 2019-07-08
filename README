@@ -125,3 +125,5 @@ Steps to run this application:
 3. To run the program and launch the shell:
         $ bin/parking_lot.sh <Input file(if you have)>
 
+  * Your input file should be inside bin folder.
+
